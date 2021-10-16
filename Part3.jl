@@ -12,7 +12,7 @@ import ColorSchemes.viridis
 PlotlyJS.templates.default = "gridon"
 
 using Distributed
-addprocs(10)
+addprocs(...)
 
 @everywhere begin
     using StatsBase
