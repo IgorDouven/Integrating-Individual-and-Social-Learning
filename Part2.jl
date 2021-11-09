@@ -135,12 +135,10 @@ out = run_sims(50, 20, 100)
 traces = [ box(;y=out[1][i, :], name="$i", marker=attr(color=:midnightblue)) for i in 1:20 ]
 layout = Layout(width=900, height=525, xaxis_title="Generation", yaxis_title="Mean \u03bb values", font_size=13, showlegend=false)
 p = plot(traces, layout)
-savefig(p, "lambdas.pdf"; scale=1)
 
 traces = [ box(;y=out[2][i, :], name="$i", marker=attr(color=:midnightblue)) for i in 1:20 ]
 layout = Layout(width=900, height=525, xaxis_title="Generation", yaxis_title="Mean \u03b8 values", font_size=13, showlegend=false)
 p = plot(traces, layout)
-savefig(p, "thetas.pdf"; scale=1)
 
 const lmd = out[1][end, :] |> mean
 const tht = out[2][end, :] |> mean
