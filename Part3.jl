@@ -2,11 +2,6 @@
 
 using PlotlyJS
 using DataFrames
-using KernelDensity
-using SimpleANOVA
-using HypothesisTests
-using EffectSizes
-using GLM
 import ColorSchemes.viridis
 
 PlotlyJS.templates.default = "gridon"
