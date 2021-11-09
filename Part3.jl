@@ -151,8 +151,7 @@ function evolutionary_algorithm(max_numb_gens::Int)
     g = 1
     while g <= max_numb_gens
         out = run_model_evo(store_pops[end])
-        bst = shuffle(getindex.(findall(i->i<=median(out), out), 1))[1:100]
-        parent_pop = store_pops[end][bst]
+        parent_pop = sample(store_pops[end], Weights(1 ./ vec(out)), 100)
         f_c = filter(i->typeof(i) == Carnapian, parent_pop)
         f_m = filter(i->typeof(i) == MetaLearner, parent_pop)
         f_t = filter(i->typeof(i) == Meritocrat, parent_pop)
